@@ -11,6 +11,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Projeto_Sistema_Web_com_ASP.NET.Data;
+using Projeto_Sistema_Web_com_ASP;
+using Projeto_Sistema_Web_com_ASP.NET.Services;
 
 namespace Projeto_Sistema_Web_com_ASP.NET
 {
@@ -40,6 +42,7 @@ namespace Projeto_Sistema_Web_com_ASP.NET
                     options.UseMySql(Configuration.GetConnectionString("Projeto_Sistema_Web_com_ASPNETContext"), builder =>
                         builder.MigrationsAssembly("Projeto_Sistema_Web_com_ASP.NET")));
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
