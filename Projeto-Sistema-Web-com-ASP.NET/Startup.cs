@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using SistemaWebAsp.Data;
 using Projeto_Sistema_Web_com_ASP.NET.Data;
 
 namespace Projeto_Sistema_Web_com_ASP.NET
@@ -37,11 +36,9 @@ namespace Projeto_Sistema_Web_com_ASP.NET
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<SistemaWebAspContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SistemaWebAspContext")));
-
             services.AddDbContext<Projeto_Sistema_Web_com_ASPNETContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Projeto_Sistema_Web_com_ASPNETContext")));
+                    options.UseMySql(Configuration.GetConnectionString("Projeto_Sistema_Web_com_ASPNETContext"), builder =>
+                        builder.MigrationsAssembly("Projeto_Sistema_Web_com_ASP.NET")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
