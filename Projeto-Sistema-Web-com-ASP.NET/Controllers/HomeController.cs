@@ -17,7 +17,8 @@ namespace Projeto_Sistema_Web_com_ASP.NET.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Salles Web MVC App from C# Course";
+            ViewData["Professor"] = "Nelio Alves";
 
             return View();
         }
