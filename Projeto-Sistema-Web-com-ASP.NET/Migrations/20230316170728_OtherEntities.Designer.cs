@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projeto_Sistema_Web_com_ASP.NET.Data;
 
 namespace Projeto_Sistema_Web_com_ASP.NET.Migrations
 {
     [DbContext(typeof(Projeto_Sistema_Web_com_ASPNETContext))]
-    partial class Projeto_Sistema_Web_com_ASPNETContextModelSnapshot : ModelSnapshot
+    [Migration("20230316170728_OtherEntities")]
+    partial class OtherEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
